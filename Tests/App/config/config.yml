@@ -1,0 +1,23 @@
+framework:
+    translator: { fallback: en }
+    secret: secret
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: %kernel.debug%
+    templating:
+        engines: ['php']
+    default_locale: en
+    session: ~
+    test: ~
+    trusted_hosts: ~
+
+doctrine_cache:
+    aliases:
+        rdrenth_tvrage_cache: array_cache
+
+    providers:
+        array_cache:
+            type: array
+
+rdrenth_tvrage:
+    cache: rdrenth_tvrage_cache
