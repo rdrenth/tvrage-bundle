@@ -28,9 +28,9 @@ class RdrenthTvrageExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        $definition = $container->findDefinition('rdrenth_tvrage.client');
-        $definition->replaceArgument(0, new Reference($config['cache']));
         $container->setAlias('rdrenth_tvrage.client_cache', $config['cache']);
+        $definition = $container->findDefinition('rdrenth_tvrage.client');
+        $definition->replaceArgument(0, new Reference('rdrenth_tvrage.client_cache'));
     }
 
     /**
