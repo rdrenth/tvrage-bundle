@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\FlysystemBundle\Tests\DependencyInjection;
+namespace Rdrenth\TvrageBundle\Tests\DependencyInjection;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\Client;
