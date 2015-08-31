@@ -12,12 +12,9 @@ framework:
     trusted_hosts: ~
 
 doctrine_cache:
-    aliases:
-        rdrenth_tvrage_cache: array_cache
-
     providers:
         array_cache:
             type: array
 
 rdrenth_tvrage:
-    cache: rdrenth_tvrage_cache
+    cache: doctrine_cache.providers.array_cache

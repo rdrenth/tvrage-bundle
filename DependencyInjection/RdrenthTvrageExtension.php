@@ -4,6 +4,7 @@ namespace Rdrenth\TvrageBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -28,7 +29,15 @@ class RdrenthTvrageExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->setAlias('rdrenth_tvrage.client_cache', $config['cache']);
+        if (!empty($config['cache'])) {
+            $container->setAlias('rdrenth_tvrage.client_cache', $config['cache']);
+        } else {
+            $container->setDefinition(
+                'rdrenth_tvrage.client_cache',
+                new Definition('Doctrine\\Common\\Cache\\VoidCache')
+            );
+        }
+
         $definition = $container->findDefinition('rdrenth_tvrage.client');
         $definition->replaceArgument(0, new Reference('rdrenth_tvrage.client_cache'));
     }

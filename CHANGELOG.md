@@ -1,4 +1,8 @@
 # Changelog
+
+## 0.1.2
+* Configuring doctrine cache is optional, uses VoidCache by default.
+* Update namespace for BundleTest
  
 ## 0.1.1
 * Add branch alias to composer.json

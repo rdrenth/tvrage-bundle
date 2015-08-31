@@ -26,8 +26,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('cache')
                     ->info('Provide a doctrine cache service id')
-                    ->isRequired()
-                    ->cannotBeEmpty()
+                    ->defaultNull()
                 ->end()
             ->end();
 
