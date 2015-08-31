@@ -23,14 +23,20 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
+        new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+        // ...
         new Rdrenth\TvrageBundle\RdrenthTvrageBundle(),
         // ...
     );
 }
 ```
 
-### Step 3: Configure your `config.yml` file
-The [adrenth/tvrage](https://github.com/adrenth/tvrage) package requires a Doctrine `Cache` instance. For more info on how to configure Doctrine Cache visit [https://github.com/doctrine/DoctrineCacheBundle](https://github.com/doctrine/DoctrineCacheBundle).
+### Step 3: Configure your `config.yml` file (optional)
+The [adrenth/tvrage](https://github.com/adrenth/tvrage) package requires a Doctrine `Cache` instance. By default this bundle uses a `VoidCache` instance for easy setup.
+
+For more info on how to configure the Doctrine Cache Bundle visit [https://github.com/doctrine/DoctrineCacheBundle](https://github.com/doctrine/DoctrineCacheBundle).
+
+If you want to use an already available doctrine cache provider, this could work:
 
 ```yaml
 # app/config/config.yml
@@ -40,7 +46,7 @@ doctrine_cache:
             type: array
             
 rdrenth_tvrage:
-    cache: array_cache			# service id for doctrine cache
+    cache: doctrine_cache.providers.array_cache
 ```
 ## Usage
 Once you've configured the bundle you are able to fetch the client from Symfony's Container, for example in a Controller:
