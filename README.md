@@ -1,6 +1,8 @@
 RdrenthTvrageBundle
 =============
 
+[![Build Status](https://travis-ci.org/rdrenth/tvrage-bundle.svg?branch=master)](http://travis-ci.org/rdrenth/tvrage-bundle) [![Latest Stable Version](https://poser.pugx.org/rdrenth/tvrage-bundle/v/stable)](https://packagist.org/packages/rdrenth/tvrage-bundle) [![Total Downloads](https://poser.pugx.org/rdrenth/tvrage-bundle/downloads)](https://packagist.org/packages/rdrenth/tvrage-bundle) [![Latest Unstable Version](https://poser.pugx.org/adrenth/tvrage/v/unstable)](https://packagist.org/packages/adrenth/tvrage) [![License](https://poser.pugx.org/rdrenth/tvrage-bundle/license)](https://packagist.org/packages/rdrenth/tvrage-bundle)
+
 ## About
 This is a Symfony2 Bundle for the [adrenth/tvrage](https://github.com/adrenth/tvrage) package. For more info visit [https://github.com/adrenth/tvrage](https://github.com/adrenth/tvrage).
 
